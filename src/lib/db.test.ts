@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import 'fake-indexeddb/auto';
 import { IDBFactory } from 'fake-indexeddb';
 import { todosDb } from './db';
@@ -16,7 +16,7 @@ function makeTodo(overrides: Partial<Todo> = {}): Todo {
 }
 
 beforeEach(() => {
-    indexedDB = new IDBFactory();
+    vi.stubGlobal('indexedDB', new IDBFactory());
     todosDb._resetConnection();
 });
 

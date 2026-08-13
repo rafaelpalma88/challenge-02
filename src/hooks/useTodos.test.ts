@@ -1,11 +1,11 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { IDBFactory } from 'fake-indexeddb';
 import { useTodos } from './useTodos';
 import { todosDb } from '../lib/db';
 
 beforeEach(() => {
-    indexedDB = new IDBFactory();
+    vi.stubGlobal('indexedDB', new IDBFactory());
     todosDb._resetConnection();
 });
 
