@@ -23,9 +23,7 @@ function App() {
   return (
     <div className="page">
       <header className="page__header">
-        <p className="page__eyebrow">Tally</p>
         <h1 className="page__title">Today's ledger</h1>
-        <p className="page__subtitle">Log it, track it, cross it off.</p>
       </header>
 
       <main className="page__main">
