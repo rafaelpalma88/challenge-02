@@ -1,8 +1,8 @@
 import { useTodos } from './hooks/useTodos';
 import { TodoForm } from './components/TodoForm';
+import './App.css';
 import { SearchFilterBar } from './components/SearchFilterBar';
 import { TodoList } from './components/TodoList';
-import './App.css';
 
 function App() {
   const {
